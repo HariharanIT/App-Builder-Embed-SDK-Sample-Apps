@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="app-builder-web-sdk.var.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script>
+      AgoraAppBuilder.default.on('token-not-found', () => {
+        console.log('debugging token-not-found triggered');
+      });
+      AgoraAppBuilder.default.on('will-token-expire', () => {
+        console.log('debugging will-token-expire triggered');
+      });
+      AgoraAppBuilder.default.on('did-token-expire', () => {
+        console.log('debugging did-token-expire triggered');
+      });
+      try {
+        AgoraAppBuilder.default
+          .setAppBuilerToken(
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoZW50aWNhdGlvbl90eXBlIjoxLCJhcHBfaWQiOiJmOWM1MDE3NWY4NjY0MDJmOWRkMWEyNDlmYjE2ZDkxNyIsInVzZXJfaWQiOiJjLWFiZjBhYWUzLTg2ZTktNDIyNC1hZDRlLTgzZDVhMmFiNTFiMiIsInByb2plY3RfaWQiOiIxNzVjZjhiYzRjYjY5NDRlZWY1ZSIsImV4cCI6MTY3ODA5ODQ4OH0.tZ2brYKxDKqjxssxutgdVXrIJgviaQFUjiq7btaNrQE',
+          )
+          .then((data) => {
+            console.log('set token success');
+          })
+          .catch((error) => {
+            console.log('set token failure', error);
+          });
+      } catch (error) {
+        console.log('set token error: ', error);
+      }
+      // // Install FPE
+      // AgoraAppBuilder.default.customize({})
 
-<head>
-  <title></title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="app-builder-web-sdk.var.js"></script>
-  <link rel="stylesheet" type="text/css" href="index.css" />
-  <script>
-    // Install FPE
-    AgoraAppBuilder.default.customize({})
+      // function joinMeeting() {
+      //   AgoraAppBuilder.default.join(document.getElementById("meetingId").value)
+      // }
 
-    function joinMeeting() {
-      AgoraAppBuilder.default.join(document.getElementById("meetingId").value)
-    }
+      // const unsubs = [
+      //   AgoraAppBuilder.default.on("create", (hostMeetingId, attendeeMeetingId, pstnNumber) => {
+      //     console.log("HTML Host App: Meeting created with", {
+      //       hostMeetingId,
+      //       attendeeMeetingId,
+      //       pstnNumber,
+      //     });
+      //   }),
+      //   AgoraAppBuilder.default.on("preJoin", (meetingTitle, deviceList) => {
+      //     console.log("HTML Host App: precall with", { meetingTitle, deviceList });
+      //   }),
+      //   AgoraAppBuilder.default.on("join", (meetingTitle, deviceList, isHost) => {
+      //     console.log("HTML Host App: Meeting joined with", { meetingTitle, deviceList, isHost });
+      //   }),
+      //   AgoraAppBuilder.default.on("leave", () => {
+      //     console.log("HTML Host App: Meeting left");
+      //   })
+      // ]
 
-    const unsubs = [
-      AgoraAppBuilder.default.on("create", (hostMeetingId, attendeeMeetingId, pstnNumber) => {
-        console.log("HTML Host App: Meeting created with", {
-          hostMeetingId,
-          attendeeMeetingId,
-          pstnNumber,
-        });
-      }),
-      AgoraAppBuilder.default.on("preJoin", (meetingTitle, deviceList) => {
-        console.log("HTML Host App: precall with", { meetingTitle, deviceList });
-      }),
-      AgoraAppBuilder.default.on("join", (meetingTitle, deviceList, isHost) => {
-        console.log("HTML Host App: Meeting joined with", { meetingTitle, deviceList, isHost });
-      }),
-      AgoraAppBuilder.default.on("leave", () => {
-        console.log("HTML Host App: Meeting left");
-      })
-    ]
+      // function Unsubscribe() {
+      //   unsubs.forEach((v) => v());
+      // }
+    </script>
+  </head>
 
-    function Unsubscribe() {
-      unsubs.forEach((v) => v());
-    }
-
-  </script>
-</head>
-
-<body>
-  <div class="App">
-    <div class="header">
-      <span>My HTML App</span>
-      <input id="meetingId" type="text" placeholder="Room id"></input>
-      <button onclick="joinMeeting()">Join</button>
-      <button onclick="Unsubscribe()">Unsubscribe</button>
+  <body>
+    <div class="App">
+      <div class="header">
+        <span>My HTML App</span>
+        <!-- <input id="meetingId" type="text" placeholder="Room id"></input> -->
+        <!-- <button onclick="joinMeeting()">Join</button>
+      <button onclick="Unsubscribe()">Unsubscribe</button> -->
+      </div>
+      <div style="display: flex; flex: 1">
+        <app-builder />
+      </div>
     </div>
-    <div style=" display: flex; flex: 1 ">
-      <app-builder />
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

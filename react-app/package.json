@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@appbuilder/react": "file:../../../test/app-builder-core/Builds/react-sdk/appbuilder-react-4.0.0-beta.11-UOkLj6dOG7.tgz",
+    "@appbuilder/react": "file:../../../test/app-builder-core/Builds/react-sdk/appbuilder-react-4.0.0-beta.12-2YKHb19UOM.tgz",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",
     "react": "17.0.1",
