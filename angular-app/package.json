@@ -18,9 +18,8 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@appbuilder/web": "file:../../../agora/fpe-api-v1-app-builder-core/Builds/web-sdk/appbuilder-web-3.0.1-OECwwwC0w4.tgz",
+    "@appbuilder/web": "file:appbuilder-web-4.0.19-XR9iyCBZ6F.tgz",
     "@types/react": "^18.0.13",
-    "react": "^18.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
