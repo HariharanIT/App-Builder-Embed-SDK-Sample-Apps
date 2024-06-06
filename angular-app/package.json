@@ -18,7 +18,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@appbuilder/web": "file:appbuilder-web-4.0.19-XR9iyCBZ6F.tgz",
+    "@appbuilder/web": "file:appbuilder-web-3.0.20-XAmRIxBN5n.tgz",
     "@types/react": "^18.0.13",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

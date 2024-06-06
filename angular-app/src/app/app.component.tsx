@@ -35,13 +35,28 @@ export class AppComponent {
     });
     AppBuilderWebSdk.customize(myCustomization);
 
-    setTimeout(() => {
-      AppBuilderWebSdk.joinPrecall(
-        "510f4f74-a973-41e6-82b7-8b29314f281a",
-        "",
-        false
-      );
-    }, 3000 * 2);
+    //token
+    const token =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoZW50aWNhdGlvbl90eXBlIjoxLCJhcHBfaWQiOiI5YWM0YzhmMThkMjU0YTc0OWNkYzkzYTlhMTc0Njc4OSIsInVzZXJfaWQiOiJjLWZlZmFhZWRjLWViM2EtNGRmOS1hZThiLTgwMTA2MzY2YzBlOCIsInByb2plY3RfaWQiOiI2NjRmNzVkZmY4YTU0M2RlNzI1NCIsImV4cCI6MTcxODI2MzM0Nn0.u4zafqTALg3CR4VObNrkUesFf55H365zeZEF07Xig7c";
+    AppBuilderWebSdk.login(token)
+      .then(() => {
+        console.log("debugging login success");
+        //host
+        AppBuilderWebSdk.joinPrecall(
+          "3bfe2c35-dd75-4a9b-a198-6982ac7da96f",
+          "",
+          false
+        );
+        // //attendee
+        // AppBuilderWebSdk.joinPrecall(
+        //   "e100eb1c-b8ca-4d4c-9060-850d591cd1a7",
+        //   "",
+        //   false
+        // );
+      })
+      .catch((err) => {
+        console.log("debugging login failure", err);
+      });
   }
 
   ngOnDestroy() {}
