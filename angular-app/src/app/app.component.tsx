@@ -2,9 +2,7 @@ import { Component } from "@angular/core";
 import AppBuilderWebSdk, { React } from "@appbuilder/web";
 import DummyComponent, { useAfterEndCallHook } from "./DummyComponent";
 import WrapperProvider from "./app.wrapper";
-// Prevent dead code elimination on react
-React.createElement("div");
-
+console.log("debugging AppBuilderWebSDK", AppBuilderWebSdk);
 @Component({
   selector: "app-root",
   template: `
