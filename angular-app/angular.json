@@ -25,7 +25,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/bd3192484fc8171f96ef.ttf",
+              "src/748678f636b290491321.ttf",
               "src/wasm/denoiser-wasm.wasm"
             ],
             "styles": ["src/styles.css"],
@@ -92,7 +92,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/bd3192484fc8171f96ef.ttf",
+              "src/748678f636b290491321.ttf",
               "src/wasm/denoiser-wasm.wasm"
             ],
             "styles": ["src/styles.css"],
